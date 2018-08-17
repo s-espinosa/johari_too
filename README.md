@@ -1,24 +1,12 @@
-# README
+# Johari Window Too
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project uses [Omniauth Census](https://github.com/turingschool-projects/omniauth-census), which requires a secure connection.
 
-Things you may want to cover:
+An SSL certificate has been generated and saved in this repository to allow you to run this project locally in your development environment. In order to start the Rails server:
 
-* Ruby version
+```
+export CENSUS_ENV=production
+rails s -b 'ssl://localhost:3000?key=.ssl/localhost.key&cert=.ssl/localhost.crt'
+```
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
