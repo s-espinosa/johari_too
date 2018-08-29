@@ -1,0 +1,20 @@
+sudo: required
+dist: trusty
+language: ruby
+rvm: 2.4.1
+cache:
+- bundler
+before_script:
+- bundle exec rake db:create --all
+- bundle exec rake db:migrate
+script:
+- bundle exec rspec
+services:
+- postgresql
+deploy:
+  provider: heroku
+  app:
+    master: johari-too
+  run: rake db:migrate
+  api_key:
+    secure: kFqhJISEEGq2RQxNth3GDJXK5qh1/b7EqJjHd3XOhrdgugdEr51WIq3/HXZs9e1/MUAB93atpxe5SryTS/t6YDP7XXe8Fy+AjcHmQ+4SnW0kJeb2Qp8gVNvL0wYYgJUxwwuUMoslMw22NdFofo/DY9a0ZUvX9ePLGr1VSdaMgSvGzYmgrHyJifrKLvs8X5E0d4TSPCfQrafEZn+k3h118RVF8tIUXNfCd2WaUHNAxMmiTkJsl/FznY5d5GXT2rp2IUF1u7jJYc2RDQ2FNW4vh92jXungVzuqIq8nYOMmvbMY9SsCshqCFipDIIBEqYIkfyxiArkP5lw4d9iX5YUKdHMah/sQm1LWRMCFSCiq7MmsGMaA+QXn/JMbQXCXSZCycGOOyNIv2Bzna2tySEVcIwQZxNokzuLtfCBXBbjFMuv1OEqLlZuhWegoagWmhB8o7kQ/7vf1r7C0UGxov5lshOUSLjYGPPcVajBoiMDEnHMc+o4e9CujakF4QAxP8kPm70l11BnmQ47oqEWPyqLaJvcpJEsRs80OF5ObxLI/yngLvcNSHrQpnemUf6/NR6VUr4ZRP0C2neM24nlbOhXPEpyiOc6gqGF5ErGId3eQ6tlSGLHdRp+2noHVusvkvs0fkt/LOku9kyH5pJ0fBUY6lrFMqlWZzZWP65LE76mvzFI=
