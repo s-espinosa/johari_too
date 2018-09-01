@@ -23,3 +23,6 @@
 
 # Ignore VCR cassettes
 /spec/cassettes
+
+# Working Vim files
+*.swp
