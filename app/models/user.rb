@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   enum role: [:default, :admin]
-  belongs_to :cohort, optional: true
+  belongs_to :turing_cohort, optional: true
 
   def full_name
     "#{first_name} #{last_name}"

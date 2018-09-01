@@ -1,0 +1,15 @@
+<h3>Cohorts</h3>
+
+<ul>
+  <% @cohorts.each do |cohort| %>
+    <li><%= link_to cohort.name, admin_cohort_path(cohort) %></li>
+  <% end %>
+</ul>
+
+<h3>Add a New Cohort</h3>
+
+<%= form_with url: admin_cohorts_path, local: true do |f| %>
+  <%= f.label :cohort_name %>
+  <%= f.text_field :cohort_name %>
+  <%= f.submit "Add Cohort" %>
+<% end %>
