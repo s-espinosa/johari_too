@@ -37,7 +37,6 @@ class CensusUser
     user.git_hub     = census_user["git_hub"]
     user.census_id   = census_user["id"]
     user.image_url   = census_user["image_url"]
-    user.role        = "default"
     user.slack       = census_user["slack"]
     user.twitter     = census_user["twitter"]
     user.save

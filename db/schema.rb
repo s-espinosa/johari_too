@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180901044009) do
     t.string "git_hub"
     t.integer "census_id"
     t.string "image_url"
-    t.integer "role"
+    t.integer "role", default: 0
     t.string "slack"
     t.string "twitter"
     t.datetime "created_at", null: false
