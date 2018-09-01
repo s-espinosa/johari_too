@@ -1,10 +1,12 @@
 <h1><%= @cohort.name %></h1>
 
 <%= form_with url: admin_cohort_assignments_path(@cohort), local: true do |f| %>
-  <%= f.label :students %><br />
+  <%= f.label :students, class: "form-heading" %><br />
   <% @cohort.users.each do |student| %>
-    <%= f.check_box student.full_name, id: "student-#{student.id}", name: "students[#{student.id}]" %>
-    <%= f.label student.full_name %><br />
+    <div class='checkbox-container'>
+      <%= f.check_box student.full_name, id: "student-#{student.id}", name: "students[#{student.id}]" %>
+      <%= f.label student.full_name, for: "student-#{student.id}", class: "checkbox-label" %><br />
+    </div>
   <% end %>
 
   <%= f.submit "Create Assignments" %>
