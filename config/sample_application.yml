@@ -1,7 +1,9 @@
 development:
   CENSUS_CLIENT_ID: YOUR_CENSUS_CLIENT_ID
   CENSUS_SECRET_ID: YOUR_CENSUS_SECRET_ID
+  CENSUS_BASE_URL: "https://login.turing.io/"
 
 production:
   CENSUS_CLIENT_ID: YOUR_CENSUS_CLIENT_ID
   CENSUS_SECRET_ID: YOUR_CENSUS_SECRET_ID
+  CENSUS_BASE_URL: "https://login-staging.turing.io/"
