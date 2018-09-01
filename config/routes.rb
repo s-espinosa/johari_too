@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
 
   namespace :admin do
-    resources :cohorts, only: [:show] do
+    resources :cohorts, only: [:show, :index, :create] do
       resources :assignments, only: [:create]
     end
   end

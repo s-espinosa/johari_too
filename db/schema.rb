@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180901044009) do
     t.integer "receiver_id"
   end
 
-  create_table "cohorts", force: :cascade do |t|
+  create_table "turing_cohorts", force: :cascade do |t|
     t.string "name"
     t.integer "census_id"
   end
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20180901044009) do
     t.string "twitter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "cohort_id"
-    t.index ["cohort_id"], name: "index_users_on_cohort_id"
+    t.bigint "turing_cohort_id"
+    t.index ["turing_cohort_id"], name: "index_users_on_turing_cohort_id"
   end
 
-  add_foreign_key "users", "cohorts"
+  add_foreign_key "users", "turing_cohorts"
 end

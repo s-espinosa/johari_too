@@ -9,6 +9,15 @@ class CensusUser
     user
   end
 
+  def self.create_from_census_cohort(cohort)
+    users = CensusService.users_by_cohort(cohort)
+    users.each do |user_hash|
+      user = create_from_census(user_hash)
+      user.update(turing_cohort: cohort)
+    end
+  end
+
+  private
   def self.update_census_user(user, census_user)
     update_attributes(user, census_user)
     user
