@@ -5,7 +5,7 @@
   <% @cohort.users.each do |student| %>
     <div class='checkbox-container'>
       <%= f.check_box student.full_name, id: "student-#{student.id}", name: "students[#{student.id}]" %>
-      <%= f.label student.full_name, for: "student-#{student.id}", class: "checkbox-label" %><br />
+      <%= f.label student.full_name, "#{student.full_name}", for: "student-#{student.id}", class: "checkbox-label" %><br />
     </div>
   <% end %>
 
