@@ -15,6 +15,11 @@ class CensusCohort
     CensusCohort.new(cohort)
   end
 
+  def self.all
+    cohorts = TuringCohort.all
+    cohorts.map { |cohort| CensusCohort.new(cohort) }
+  end
+
   def initialize(cohort)
     @cohort = cohort
   end
