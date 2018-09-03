@@ -1,6 +1,6 @@
 class Admin::CohortsController < Admin::BaseController
   def index
-    @cohorts = TuringCohort.all
+    @cohorts = CensusCohort.all
   end
 
   def show
