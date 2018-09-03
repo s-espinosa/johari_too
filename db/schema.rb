@@ -22,25 +22,12 @@ ActiveRecord::Schema.define(version: 20180901044009) do
 
   create_table "turing_cohorts", force: :cascade do |t|
     t.string "name"
-    t.integer "census_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "cohort_name"
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "git_hub"
-    t.integer "census_id"
-    t.string "image_url"
     t.integer "role", default: 0
-    t.string "slack"
-    t.string "twitter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "turing_cohort_id"
-    t.index ["turing_cohort_id"], name: "index_users_on_turing_cohort_id"
   end
 
-  add_foreign_key "users", "turing_cohorts"
 end

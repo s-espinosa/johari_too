@@ -4,7 +4,7 @@ describe "As an admin" do
   describe "when I visit the cohorts path" do
     it "I can add a cohort" do
       VCR.use_cassette('features/admin/add_cohort') do
-        admin = User.new(first_name: "Allison", last_name: "Reu Singer", role: "admin")
+        admin = User.new(role: "admin")
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
         visit admin_cohorts_path
@@ -18,7 +18,7 @@ describe "As an admin" do
 
     it "I get an error if I try to add a cohort that doesn't exist" do
       VCR.use_cassette('features/admin/add_cohort_failure') do
-        admin = User.new(first_name: "Allison", last_name: "Reu Singer", role: "admin")
+        admin = User.new(role: "admin")
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
         visit admin_cohorts_path

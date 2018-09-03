@@ -1,10 +1,10 @@
 class Admin::CohortsController < Admin::BaseController
-  def show
-    @cohort = TuringCohort.find(params[:id])
-  end
-
   def index
     @cohorts = TuringCohort.all
+  end
+
+  def show
+    @cohort = CensusCohort.find(params[:id])
   end
 
   def create
