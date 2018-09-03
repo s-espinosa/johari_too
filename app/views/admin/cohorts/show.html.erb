@@ -1,6 +1,6 @@
 <h1><%= @cohort.name %></h1>
 
-<%= form_with url: admin_cohort_assignments_path(@cohort), local: true do |f| %>
+<%= form_with url: admin_cohort_assignments_path(@cohort.id), local: true do |f| %>
   <%= f.label :students, class: "form-heading" %><br />
   <% @cohort.users.each do |student| %>
     <div class='checkbox-container'>

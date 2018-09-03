@@ -19,7 +19,7 @@ class CensusService
     response = conn.get do |req|
       req.url '/api/v1/users/by_cohort'
       req.params['access_token'] = token
-      req.params['cohort_id'] = cohort.census_id
+      req.params['cohort_id'] = cohort.id
     end
     JSON.parse(response.body)
   end
