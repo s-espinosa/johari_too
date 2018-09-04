@@ -7,5 +7,10 @@
       <li><%= link_to assignment.receiver.full_name, assignment_path(assignment.id) %></li>
     <% end %>
   </ul>
+<% end %>
 
+<% if current_user.completed_self_evaluation? %>
+  <%= link_to "See your window.", window_path(current_user.id) %>
+<% else %>
+  <%= link_to "Complete self-evaluation.", new_assignment_self_evaluation_path(current_user) %>
 <% end %>

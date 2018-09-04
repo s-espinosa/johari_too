@@ -7,7 +7,7 @@ describe "As a default user" do
         user_1 = CensusUser.new({"first_name" => "Valerie",
                                  "last_name" =>"Trudell",
                                  "id" => 81})
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1.instance_variable_get(:@user))
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
         user_2 = CensusUser.new({"first_name" => "Daniel",
                                  "last_name" => "Olson",
