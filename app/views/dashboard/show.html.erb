@@ -1,10 +1,10 @@
 <h1>PLACEHOLDER: User Dashboard</h1>
 
-<% if current_user.assignments %>
+<% if current_user.assignments != [] %>
   <h2>Awaiting Feedback</h2>
   <ul>
     <% current_user.assignments.each do |assignment| %>
-      <li><%= link_to assignment.receiver.full_name, assignment_path(assignment.receiver.id) %></li>
+      <li><%= link_to assignment.receiver.full_name, assignment_path(assignment.id) %></li>
     <% end %>
   </ul>
 
