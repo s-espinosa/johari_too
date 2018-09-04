@@ -30,6 +30,12 @@ class CensusUser
     @user.admin?
   end
 
+  def outstanding_assignments
+    @user.assignments
+      .joins("LEFT JOIN attributes ON assignments.id = attributes.assignment_id")
+      .where("attributes.assignment_id IS NULL")
+  end
+
   def completed_self_evaluation?
     @user.reload
     return false if @user.assignments == []
