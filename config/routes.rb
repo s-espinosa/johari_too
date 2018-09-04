@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
 
   resources :windows, only: [:show]
+  resources :self_evaluations, only: [:new, :create]
   resources :assignments, only: [:show] do
     resources :attributes, only: [:create]
-    resources :self_evaluations, only: [:new, :create]
   end
 
   namespace :admin do

@@ -1,6 +1,6 @@
 <h1>Select Attributes for Yourself</h1>
 
-<%= form_with url: assignment_self_evaluations_path(@assignment), local: true do |f| %>
+<%= form_with url: self_evaluations_path, local: true do |f| %>
   <%= f.label :attributes, class: "form-heading" %><br />
   <% Adjective.all.each do |adjective| %>
     <div class="checkbox-container">
