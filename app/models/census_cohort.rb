@@ -31,6 +31,16 @@ class CensusCohort
     end
   end
 
+  def outstanding_assignments
+    outstanding_users = users.select do |user|
+      user.outstanding_assignments != []
+    end
+
+    outstanding_users.map do |user|
+      user.outstanding_assignments
+    end.flatten
+  end
+
   def name
     @cohort.name
   end
