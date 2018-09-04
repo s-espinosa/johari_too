@@ -1,0 +1,12 @@
+<h1>Select Attributes for Yourself</h1>
+
+<%= form_with url: assignment_self_evaluations_path(@assignment), local: true do |f| %>
+  <%= f.label :attributes, class: "form-heading" %><br />
+  <% Adjective.all.each do |adjective| %>
+    <div class="checkbox-container">
+      <%= f.check_box adjective.name, id: "adjective-#{adjective.id}", name: "adjectives[#{adjective.id}]" %>
+      <%= f.label adjective.name, "#{adjective.name}", for: "adjective-#{adjective.id}", class: "checkbox-label" %><br />
+    </div>
+  <% end %>
+  <%= f.submit "Submit Attributes" %>
+<% end %>

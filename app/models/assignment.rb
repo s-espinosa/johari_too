@@ -1,5 +1,6 @@
 class Assignment < ApplicationRecord
   belongs_to :giver,    foreign_key: "giver_id",    class_name: "User"
+  has_many :johari_attributes, foreign_key: "assignment_id", class_name: "Attribute"
 
   def self.create_multiple(checkboxes)
     ids = []

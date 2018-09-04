@@ -22,6 +22,23 @@ class CensusUser
   end
 
   def assignments
+    @user.reload
     @user.assignments
+  end
+
+  def admin?
+    @user.admin?
+  end
+
+  def completed_self_evaluation?
+    @user.reload
+    return false if @user.assignments == []
+
+    self_eval = @user.assignments
+                     .where(receiver_id: self.id)
+                     .first
+
+    return false if self_eval.nil?
+    self_eval.johari_attributes != []
   end
 end

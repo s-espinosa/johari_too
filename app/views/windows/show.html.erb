@@ -1,0 +1,37 @@
+<h1>Your Window</h1>
+
+<div class="arena">
+  <h2>Arena</h2>
+  <ul>
+    <% @window.arena_adjectives.each do |adjective|%>
+      <li><%= adjective.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="blind_spot">
+  <h2>Blind Spot</h2>
+  <ul>
+    <% @window.blind_spot_adjectives.each do |adjective| %>
+      <li><%= adjective.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="facade">
+  <h2>Facade</h2>
+  <ul>
+    <% @window.facade_adjectives.each do |adjective| %>
+      <li><%= adjective.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="unknown">
+  <h2>Unknown</h2>
+  <ul>
+    <% @window.unknown_adjectives.each do |adjective| %>
+      <li><%= adjective.name %></li>
+    <% end %>
+  </ul>
+</div>
