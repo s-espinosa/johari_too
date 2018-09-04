@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180904011952) do
+ActiveRecord::Schema.define(version: 20180904033919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20180904011952) do
     t.integer "receiver_id"
   end
 
+  create_table "attributes", force: :cascade do |t|
+    t.bigint "assignment_id"
+    t.bigint "adjective_id"
+    t.index ["adjective_id"], name: "index_attributes_on_adjective_id"
+    t.index ["assignment_id"], name: "index_attributes_on_assignment_id"
+  end
+
   create_table "turing_cohorts", force: :cascade do |t|
     t.string "name"
   end
@@ -34,4 +41,6 @@ ActiveRecord::Schema.define(version: 20180904011952) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attributes", "adjectives"
+  add_foreign_key "attributes", "assignments"
 end

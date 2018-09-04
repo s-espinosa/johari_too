@@ -24,6 +24,14 @@ class CensusService
     JSON.parse(response.body)
   end
 
+  def self.find_user(id)
+    response = conn.get do |req|
+      req.url "/api/v1/users/#{id}"
+      req.params['access_token'] = token
+    end
+    JSON.parse(response.body)
+  end
+
   private
   def self.conn
     Faraday.new(:url => ENV['CENSUS_BASE_URL']) do |faraday|

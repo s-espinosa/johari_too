@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get '/dashboard', to: 'dashboard#show'
 
+  resources :assignments, only: [:show] do
+    resources :attributes, only: [:create]
+  end
+
   namespace :admin do
     resources :cohorts, only: [:show, :index, :create] do
       resources :assignments, only: [:create]
