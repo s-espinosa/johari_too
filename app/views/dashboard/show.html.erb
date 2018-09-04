@@ -12,5 +12,5 @@
 <% if current_user.completed_self_evaluation? %>
   <%= link_to "See your window.", window_path(current_user.id) %>
 <% else %>
-  <%= link_to "Complete self-evaluation.", new_assignment_self_evaluation_path(current_user) %>
+  <%= link_to "Complete self-evaluation.", new_self_evaluation_path %>
 <% end %>
