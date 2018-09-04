@@ -1,7 +1,5 @@
 class SelfEvaluationsController < ApplicationController
   def new
-    @assignment = Assignment.new(giver_id: current_user.id,
-                                 receiver_id: current_user.id)
   end
 
   def create
