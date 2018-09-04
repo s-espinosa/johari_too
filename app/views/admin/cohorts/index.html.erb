@@ -2,7 +2,7 @@
 
 <ul>
   <% @cohorts.each do |cohort| %>
-    <li><%= link_to cohort.name, admin_cohort_path(cohort.id) %></li>
+    <li><%= link_to cohort.name, admin_cohort_path(cohort.id) %> (<%= link_to "review assignments", admin_cohort_assignments_path(cohort.id) %>)</li>
   <% end %>
 </ul>
 

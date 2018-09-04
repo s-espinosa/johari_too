@@ -17,4 +17,13 @@ class Assignment < ApplicationRecord
     census_user = CensusService.find_user(receiver_id)
     CensusUser.new(census_user)
   end
+
+  def census_giver
+    census_user = CensusService.find_user(giver_id)
+    CensusUser.new(census_user)
+  end
+
+  def summary
+    "#{census_giver.full_name} owes feedback to #{receiver.full_name}"
+  end
 end
