@@ -2,6 +2,6 @@
 
 <ul>
   <% @cohort.outstanding_assignments.each do |assignment| %>
-    <li><%= assignment.summary %></li>
+    <li><%= assignment.summary %> <%= link_to "Delete", admin_cohort_assignment_path(@cohort.id, assignment), method: "DELETE" %></li>
   <% end %>
 </ul>

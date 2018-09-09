@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :cohorts, only: [:show, :index, :create] do
-      resources :assignments, only: [:create, :index]
+      resources :assignments, only: [:create, :index, :destroy]
     end
   end
 end
