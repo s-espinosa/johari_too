@@ -1,5 +1,7 @@
 <h1>Select Attributes for <%= @assignment.receiver.full_name %></h1>
 
+<p>Please select at least 5 and no more than 15 adjectives from the list below.</p>
+
 <%= form_with url: assignment_attributes_path(@assignment), local: true do |f| %>
   <%= f.label :attributes, class: "form-heading" %><br />
   <% Adjective.all.each do |adjective| %>

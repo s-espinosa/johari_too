@@ -1,5 +1,7 @@
 <h1>Select Attributes for Yourself</h1>
 
+<p>Please select at least 5 and no more than 15 adjectives from the list below.</p>
+
 <%= form_with url: self_evaluations_path, local: true do |f| %>
   <%= f.label :attributes, class: "form-heading" %><br />
   <% Adjective.all.each do |adjective| %>
