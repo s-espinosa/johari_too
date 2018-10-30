@@ -11,6 +11,7 @@ class CensusUser
     @last_name  = census_user["last_name"]
     @user       = User.where(id: census_user["id"])
                       .first_or_create(id: census_user["id"])
+                      .includes(:assignments)
   end
 
   def full_name
